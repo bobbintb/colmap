@@ -91,6 +91,7 @@ jobs:
         if: matrix.config.cudaEnabled
         id: cuda-toolkit
         with:
+          use-github-cache: False
           cuda: '${{ env.CUDA_MAJOR_VERSION }}.${{ env.CUDA_MINOR_VERSION }}.${{ env.CUDA_PATCH_VERSION }}'
           sub-packages: '["nvcc", "nvtx", "cudart", "curand", "curand_dev", "nvrtc_dev"]'
           method: 'network'
